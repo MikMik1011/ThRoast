@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
 import { threadsAPI } from '../threadsApi';
-import { type AuthScopes } from 'threads-api-wrapper';
+import { type AuthScopes } from '@mikmik1011/threads-api-wrapper';
 
 import { APP_ID, REDIRECT_URI } from '$env/static/private';
 const SCOPES = [

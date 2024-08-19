@@ -3,7 +3,7 @@ import type { PageServerLoad } from './$types';
 
 import { threadsAPI } from '../../threadsApi';
 import { APP_ID, APP_SECRET, REDIRECT_URI } from '$env/static/private';
-import type { TokenResponse } from 'threads-api-wrapper/dist/types';
+import type { TokenResponse } from '@mikmik1011/threads-api-wrapper/dist/types';
 
 export const load: PageServerLoad = async (serverLoadEvent: ServerLoadEvent) => {
 	const { url, cookies } = serverLoadEvent;

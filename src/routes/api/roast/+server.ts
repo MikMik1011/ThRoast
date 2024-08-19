@@ -12,7 +12,6 @@ const options = {
     provider: g4f.providers.GPT,
     model: "gpt-3.5-turbo",
     debug: true,
-    proxy: ""
 };
 
 export const GET = async ({ cookies }) => {
@@ -37,11 +36,18 @@ export const GET = async ({ cookies }) => {
 		limit: 100
 	})).data.filter(thread => thread.text).map(thread => thread.text);
 
+	const replies = (await threadsAPI.User.getUserReplies({
+		accessToken: token,
+		threadsUserId: userId,
+		fields: ["text"],
+		limit: 100
+	})).data.filter(thread => thread.text).map(thread => thread.text);
+
 	//copy messages array
 	const roastMsgs = [...messages];
 
 	roastMsgs.push({role: "user", content: `My details are ${JSON.stringify(user)}`});
-	roastMsgs.push({role: "user", content: `Here are some of my threads: ${JSON.stringify(threads)}`});
+	roastMsgs.push({role: "user", content: `Here are some of my threads: ${JSON.stringify(threads)} and some of my replies: ${JSON.stringify(replies)}`});
 
 	const roast = await g4f.chatCompletion(roastMsgs, options);
 

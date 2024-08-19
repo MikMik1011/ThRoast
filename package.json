@@ -31,6 +31,6 @@
 	"type": "module",
 	"dependencies": {
 		"g4f": "^1.4.6",
-		"threads-api-wrapper": "^1.0.3"
+		"@mikmik1011/threads-api-wrapper": "^1.0.4"
 	}
 }

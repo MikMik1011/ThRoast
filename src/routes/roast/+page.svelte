@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
-    import type { ProfileResponse } from "threads-api-wrapper";
+    import type { ProfileResponse } from "@mikmik1011/threads-api-wrapper";
     export let data: { user: ProfileResponse, roast: string };
     let fetching = false;
 
