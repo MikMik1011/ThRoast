@@ -1,5 +1,5 @@
 {
-	"name": "threadstats",
+	"name": "throast",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"g4f": "^1.4.6",
 		"threads-api-wrapper": "^1.0.3"
 	}
 }

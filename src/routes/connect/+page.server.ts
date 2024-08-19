@@ -25,5 +25,5 @@ export const load: PageServerLoad = async (serverLoadEvent: ServerLoadEvent) => 
 	cookies.set('token', token, { path: '/' });
     cookies.set('userId', userId, { path: '/' });
 
-	throw redirect(303, '/stats')
+	throw redirect(303, '/roast')
 };
