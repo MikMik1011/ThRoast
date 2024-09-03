@@ -22,8 +22,9 @@ export const load: PageServerLoad = async (serverLoadEvent: ServerLoadEvent) => 
 	const token = response.access_token;
 	const userId = response.user_id;
 
-	cookies.set('token', token, { path: '/' });
-    cookies.set('userId', userId, { path: '/' });
+	cookies.set('token', token, { path: '/', maxAge: 3600 });
+    cookies.set('userId', userId, { path: '/', maxAge: 3600 });
+	cookies.delete('user', { path: '/' });
 
 	throw redirect(303, '/roast')
 };
